@@ -8,20 +8,19 @@
  *  All the exposed methods should return a Promise to allow all the methods
  *  run asynchronous.
  */
-
 const SHA256 = require('crypto-js/sha256');
 const hex2ascii = require('hex2ascii');
 
 class Block {
 
     // Constructor - argument data will be the object containing the transaction data
-	constructor(data){
-		this.hash = null;                                           // Hash of the block
-		this.height = 0;                                            // Block Height (consecutive number of each block)
-		this.body = Buffer(JSON.stringify(data)).toString('hex');   // Will contain the transactions stored in the block, by default it will encode the data
-		this.time = 0;                                              // Timestamp for the Block creation
-		this.previousBlockHash = null;                              // Reference to the previous Block Hash
-  }
+    constructor(data) {
+        this.hash = null; // Hash of the block
+        this.height = 0; // Block Height (consecutive number of each block)
+        this.body = Buffer(JSON.stringify(data)).toString('hex'); // Will contain the transactions stored in the block, by default it will encode the data
+        this.time = 0; // Timestamp for the Block creation
+        this.previousBlockHash = null; // Reference to the previous Block Hash
+    }
 
     /**
      *  validate() method will validate if the block has been tampered or not.
@@ -35,30 +34,28 @@ class Block {
      *  5. Resolve true or false depending if it is valid or not.
      *  Note: to access the class values inside a Promise code you need to create an auxiliary value `let self = this;`
      */
-  validate() {
-    let self = this;
-    return new Promise((resolve, reject) => {
+    validate() {
+        let self = this;
+        return new Promise((resolve, reject) => {
 
-      try {
-        // Save in auxiliary variable the current block
-        let auxHash = self.hash;
-        // Recalculate the hash of the Block
-        let recalcHash = SHA256(JSON.stringify(self.data)).toString();
-        // Comparing if the hashes changed
-        if (auxHash === recalcHash) {
-          // Returning the Block is valid
-          resolve(true);
-          }
-        else {
-          // Returning the Block is not valid
-          resolve(false);
-          }
-      }
-      catch(err) {
-        reject(err + "occured!");
-      }
-  });
-}
+            try {
+                // Save in auxiliary variable the current block
+                let auxHash = self.hash;
+                // Recalculate the hash of the Block
+                let recalcHash = SHA256(JSON.stringify(self)).toString();
+                // Comparing if the hashes changed
+                if (auxHash === recalcHash) {
+                    // Returning the Block is valid
+                    resolve(true);
+                } else {
+                    // Returning the Block is not valid
+                    resolve(false);
+                }
+            } catch (err) {
+                reject(err + "occured!");
+            }
+        });
+    }
 
     /**
      *  Auxiliary Method to return the block body (decoding the data)
@@ -69,25 +66,24 @@ class Block {
      *  3. Resolve with the data and make sure that you don't need to return the data for the `genesis block`
      *     or Reject with an error.
      */
-   getBData() {
-         let self = this;
-         return new Promise((resolve, reject) => {
+    getBData() {
+        let self = this;
+        return new Promise((resolve, reject) => {
 
-           try {
-             if (self.height === 0) {
-               reject("Trying to access Genesis Block!");
-             }
+            try {
+                if (self.height === 0) {
+                    reject("Trying to access Genesis Block!");
+                }
 
-              resolve(JSON.parse(hex2ascii(self.body)));
-           }
-           catch(err) {
-             reject(err + "occured!");
-           }
+                resolve(JSON.parse(hex2ascii(self.body)));
+            } catch (err) {
+                reject(err + "occured!");
+            }
 
-         });
-  }
+        });
+    }
 
 
 }
 
-module.exports.Block = Block;                    // Exposing the Block class as a module
+module.exports.Block = Block; // Exposing the Block class as a module
