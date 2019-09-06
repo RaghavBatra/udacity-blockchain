@@ -11,10 +11,9 @@
     ![](media/image1.png)
 
 3.  must use a POST call to requestValidation\
-    ![](media/image2.png)
+    ![](media/image4.png)
 4.  must sign message with your wallet\
     ![](media/image3.png)
-    ![](media/image4.png)
 5.  must submit your Star\
     ![](media/image5.png)
 6.  must use GET call to retrieve starts owned by a particular address\
