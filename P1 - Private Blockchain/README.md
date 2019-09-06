@@ -1,8 +1,6 @@
 **Udacity Blockchain Developer Nanodegree**
 
-**Project 1: Build Your Private Blockchain\
-\
-**
+**Project 1: Build Your Private Blockchain**
 
 1.  As per <https://knowledge.udacity.com/questions/45817>, block -\>
     blockHash to differentiate between the requests
