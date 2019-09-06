@@ -1,4 +1,3 @@
-<<<<<<< HEAD:P1 - Private Blockchain/README.md
 **Udacity Blockchain Developer Nanodegree**
 
 **Project 1: Build Your Private Blockchain\
