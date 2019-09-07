@@ -40,10 +40,13 @@ class Block {
 
             try {
                 // Save in auxiliary variable the current block
-                let auxHash = self.hash;
+                let currentHash = self.hash
+                // Set current hash value to null
+                self.hash = null
                 // Recalculate the hash of the Block
-                let recalcHash = SHA256(JSON.stringify(self)).toString();
+                let newHash = SHA256(JSON.stringify(self)).toString();
                 // Comparing if the hashes changed
+                self.hash = currentHash
                 if (auxHash === recalcHash) {
                     // Returning the Block is valid
                     resolve(true);
