@@ -47,7 +47,7 @@ class Block {
                 let newHash = SHA256(JSON.stringify(self)).toString();
                 // Comparing if the hashes changed
                 self.hash = currentHash
-                if (auxHash === recalcHash) {
+                if (currentHash === newHash) {
                     // Returning the Block is valid
                     resolve(true);
                 } else {

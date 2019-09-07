@@ -257,7 +257,7 @@ class Blockchain {
             try {
 
                 let validBlock = self.chain[0];
-                self.chain.forEach(function(currVal, index) {
+                self.chain.forEach(async function(currVal, index) {
 
                     if (index != 0) {
                         let validResult = await currVal.validate();
