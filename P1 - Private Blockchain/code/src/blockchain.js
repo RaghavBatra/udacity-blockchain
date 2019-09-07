@@ -228,7 +228,7 @@ class Blockchain {
                     if (index > 0) {
                         let decodedData = currValue.getBData().then(function(data) {
                             if (data.address === address) {
-                                stars.push(data.star);
+                                stars.push({"owner":address, "star":data.star});
                             }
                         });
                     }
