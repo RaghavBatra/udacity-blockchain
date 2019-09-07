@@ -260,7 +260,7 @@ class Blockchain {
                 self.chain.forEach(function(currVal, index) {
 
                     if (index != 0) {
-                        let validResult = currVal.validate();
+                        let validResult = await currVal.validate();
                         if (!validResult) {
                             errorLog.push("Block #" + currVal.height + " did not validate");
                         }
