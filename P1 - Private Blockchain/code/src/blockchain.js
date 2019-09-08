@@ -78,9 +78,6 @@ class Blockchain {
                     block.previousBlockHash = self.chain[self.chain.length - 1].hash;
                 }
 
-                // update block hash
-                block.hash = SHA256(JSON.stringify(block)).toString();
-
                 // update UTC timestamp
                 block.time = new Date().getTime().toString().slice(0, -3);
 
@@ -89,6 +86,9 @@ class Blockchain {
 
                 // update block height
                 block.height = self.height;
+
+                // update block hash
+                block.hash = SHA256(JSON.stringify(block)).toString();
 
                 self.chain.push(block);
                 resolve(block);
