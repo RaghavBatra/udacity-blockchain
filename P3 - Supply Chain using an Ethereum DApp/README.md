@@ -13,3 +13,5 @@ code <br>
 
 ## UML
 Please find in separate _UML_ folder
+
+_Based on <a href = "https://github.com/udacity/nd1309-Project-6b-Example-Template"> this starter template_
