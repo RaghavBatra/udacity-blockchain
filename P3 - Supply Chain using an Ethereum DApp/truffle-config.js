@@ -1,13 +1,3 @@
-// module.exports = {
-//   networks: {
-//     development: {
-//       host: "127.0.0.1",
-//       port: 8545,
-//       network_id: "*" // Match any network id
-//     }
-//   }
-// };
-
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const infuraKey = "970d7b5db9f2424f9a07fb1fde38e956";
 //
