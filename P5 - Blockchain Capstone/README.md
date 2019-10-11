@@ -75,8 +75,12 @@ Udacious Tokens **#6-10** have been bought - this can be checked in the transact
 history for these tokens. See screenshot below for both buyer and seller:
 
 *SELLER:*
+
+
 ![alt text](./assets/transactionOpenSea.PNG)
 *BUYER:*
+
+
 ![alt text](./assets/transactionOpenSea2.PNG)
 
 ## Contrct ABI
