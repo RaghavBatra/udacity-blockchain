@@ -1,0 +1,11 @@
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+build/contracts
+build
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
