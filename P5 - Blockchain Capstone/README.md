@@ -78,6 +78,7 @@ history for these tokens. See screenshot below for both buyer and seller:
 
 
 ![alt text](./assets/transactionOpenSea.PNG)
+
 *BUYER:*
 
 
