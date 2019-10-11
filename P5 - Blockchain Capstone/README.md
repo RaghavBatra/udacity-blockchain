@@ -15,7 +15,7 @@ The capstone will build upon the knowledge you have gained in the course in orde
 1. Start ganache (CLI or GUI)
             `ganache-cli`
 
-2. Mirgrate locally
+2. Migrate locally
               `truffle migrate --network development --reset`
 
 #### Testing contracts
@@ -53,6 +53,7 @@ Test minting with zkSnarks.
     2.3 set Rinkeby endpoint within `HDWalletProvider`
 
 3. Migrate to Rinkeby
+        First move `Verifier.sol` and `proof.json` into the `contracts` folder
         `truffle migrate --network rinkeby`
 
 4. Finding ER721 token on EtherScan (contract address)
